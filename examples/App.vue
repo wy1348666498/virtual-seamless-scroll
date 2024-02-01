@@ -1,8 +1,21 @@
 <template>
+  <h2>纵向滚动</h2>
   <div class="list-box">
     <VirtualSeamlessScroll :list="listData">
       <template #item="{ item }">
         <div class="i-item">
+          <span>{{ item.index }}</span>
+          <span>{{ item.name }}</span>
+          <span>{{ item.num }}</span>
+        </div>
+      </template>
+    </VirtualSeamlessScroll>
+  </div>
+  <h2>横向滚动</h2>
+  <div class="list-box">
+    <VirtualSeamlessScroll :list="listData" direction="horizontal">
+      <template #item="{ item }">
+        <div class="i-item i-item1">
           <span>{{ item.index }}</span>
           <span>{{ item.name }}</span>
           <span>{{ item.num }}</span>
@@ -37,5 +50,9 @@ const listData = ref(
   padding: 0 10px;
   line-height: 30px;
   border-bottom: 1px solid #ccc;
+}
+.i-item1 {
+  height: 60px;
+  line-height: 60px;
 }
 </style>

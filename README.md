@@ -1,5 +1,12 @@
 # virtual-seamless-scroll
 
+## 介绍
+基于Vue3.0的无缝滚动组件，支持虚拟列表，支持横向滚动和纵向滚动，支持鼠标移入停止滚动，支持自定义滚动间隔时间，支持自定义开启滚动的数据量
+
+## 效果图
+
+![image](.\resource\横向.gif)
+![image](.\resource\纵向.gif)
 ## 安装
 1. npm
     ```
@@ -10,17 +17,18 @@
     yarn add virtual-seamless-scroll
     ```
 ## 组件配置
-| 参数 | 说明                        | 类型 | 默认值  |
-| --- |---------------------------| --- |------|
-| list | 数据源                       | Array | []   |
-| limitScrollNum | 开启滚动的数据量，只有列表长度大于等于该值才会滚动 | Number | 100  |
-| intervalTime | 滚动间隔时间(ms,越小约快)           | Number | 300 |
-| maxViewNum | 视图里最多显示的数据量(开启虚拟列表的阈值)    | Number | 20 |
-| mouseenterStop | 鼠标移入是否停止滚动                | Boolean | true |
+| 参数 | 说明                        | 类型      | 默认值       |
+| --- |---------------------------|---------|-----------|
+| list | 数据源                       | Array   | []        |
+| limitScrollNum | 开启滚动的数据量，只有列表长度大于等于该值才会滚动 | Number  | 100       |
+| intervalTime | 滚动间隔时间(ms,越小约快)           | Number  | 300       |
+| maxViewNum | 视图里最多显示的数据量(开启虚拟列表的阈值)    | Number  | 20        |
+| mouseenterStop | 鼠标移入是否停止滚动                | Boolean | true      |
+| direction | 滚动方向(vertical horizontal)                    | String  | vertical  |
 ## 注意项
 1. 该组件需要父元素设置宽高，否则无法正常滚动
 2. limitScrollNum的值需要大于等于maxViewNum的值，否则无法正常滚动
-3. 组件列表的每一项的高度需要一致，否则滚动会出现问题
+3. 组件列表的每一项的高度（纵向滚动时）、宽度（横向滚动时）需要一致，否则滚动会出现问题
 ## 使用
 ### 全局注册
 ```javascript
