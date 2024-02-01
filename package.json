@@ -1,8 +1,9 @@
 {
   "name": "virtual-seamless-scroll",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "license": "MIT",
+  "main": "lib/virtual-seamless-scroll.umd",
   "description": "虚拟列表无缝滚动组件",
   "author": "weiyang<1348666498@qq.com>",
   "keyword": ["vue","vue3"],
