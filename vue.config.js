@@ -11,4 +11,7 @@ module.exports = defineConfig({
       filename: "index.html",
     },
   },
+  css: {
+    extract: false,
+  },
 });
