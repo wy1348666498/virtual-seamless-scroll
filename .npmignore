@@ -4,6 +4,7 @@ examples/
 packages/
 public/
 vue.config.js
+.eslintrc.js
 .browserslistrc
 .gitignore
 jsconfig.json
