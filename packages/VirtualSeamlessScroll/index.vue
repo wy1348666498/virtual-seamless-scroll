@@ -1,6 +1,6 @@
 <template>
   <div class="virtual-seamless-scroll">
-    <div ref="scrollRef">
+    <div ref="scrollRef" :class="props.direction">
       <template v-for="(item, index) in currentList" :key="index">
         <slot name="item" :item="item"></slot>
       </template>
@@ -50,6 +50,14 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  // 滚动方向 vertical horizontal 默认vertical
+  direction: {
+    type: String,
+    default: "vertical",
+    validator(value) {
+      return ["vertical", "horizontal"].includes(value);
+    },
+  },
 });
 
 const scrollRef = ref();
@@ -84,10 +92,22 @@ const currentList = computed(() => {
  */
 function run() {
   if (nList.value.length < props.limitScrollNum) return;
+  const moveDirection = {
+    vertical: "translateY",
+    horizontal: "translateX",
+  };
+  const moveDistance = {
+    vertical: scrollRef.value?.clientHeight,
+    horizontal: scrollRef.value?.clientWidth,
+  };
   // 创建动画
   const keyframes = [
-    { transform: "translateY(0px)" },
-    { transform: `translateY(-${scrollRef.value.clientHeight / 2}px)` },
+    { transform: `${moveDirection[props.direction]}(0px)` },
+    {
+      transform: `${moveDirection[props.direction]}(-${
+        moveDistance[props.direction] / 2
+      }px)`,
+    },
   ];
   const options = {
     duration: props.intervalTime * currentList.value.length,
@@ -165,5 +185,11 @@ onUnmounted(() => {
   overflow: hidden;
   height: 100%;
   box-sizing: border-box;
+}
+.vertical {
+}
+.horizontal {
+  display: inline-flex;
+  white-space: nowrap;
 }
 </style>
