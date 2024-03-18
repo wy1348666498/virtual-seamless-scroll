@@ -1,6 +1,6 @@
 {
   "name": "virtual-seamless-scroll",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "license": "MIT",
   "main": "lib/virtual-seamless-scroll.umd.min.js",

@@ -19,9 +19,9 @@ import {
   computed,
   nextTick,
   onMounted,
-  onUnmounted,
   ref,
   watch,
+  onBeforeUnmount,
 } from "vue";
 
 const props = defineProps({
@@ -146,6 +146,7 @@ function animationPlay() {
  */
 function animationCancel() {
   animation && animation.cancel();
+  animation = null;
 }
 
 watch(
@@ -171,7 +172,7 @@ onMounted(() => {
     scrollRef.value?.addEventListener("mouseleave", animationPlay);
   }
 });
-onUnmounted(() => {
+onBeforeUnmount(() => {
   animationCancel();
   if (props.mouseenterStop) {
     scrollRef.value?.removeEventListener("mouseenter", animationPause);
