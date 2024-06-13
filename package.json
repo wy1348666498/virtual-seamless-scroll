@@ -1,12 +1,15 @@
 {
   "name": "virtual-seamless-scroll",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "license": "MIT",
   "main": "lib/virtual-seamless-scroll.umd.min.js",
   "description": "虚拟列表无缝滚动组件",
   "author": "weiyang<1348666498@qq.com>",
-  "keyword": ["vue","vue3"],
+  "keyword": [
+    "vue",
+    "vue3"
+  ],
   "repository": {
     "type": "git",
     "url": "https://gitee.com/haoran-wy/virtual-seamless-scroll.git"
