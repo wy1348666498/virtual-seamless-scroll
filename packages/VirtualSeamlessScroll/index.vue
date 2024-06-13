@@ -1,7 +1,10 @@
 <template>
   <div class="virtual-seamless-scroll">
     <div ref="scrollRef" :class="props.direction">
-      <template v-for="(item, index) in currentList" :key="index">
+      <template
+        v-for="(item, index) in currentList"
+        :key="`${index}_${new Date().getTime()}`"
+      >
         <slot name="item" :item="item"></slot>
       </template>
     </div>
