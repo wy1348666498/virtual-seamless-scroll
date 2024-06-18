@@ -1,12 +1,15 @@
 {
   "name": "virtual-seamless-scroll",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": false,
   "license": "MIT",
   "main": "lib/virtual-seamless-scroll.umd.min.js",
   "description": "虚拟列表无缝滚动组件",
   "author": "WeiYang<2116466260@qq.com>",
-  "keywords": ["vue", "vue3"],
+  "keywords": [
+    "vue",
+    "vue3"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/wy1348666498/virtual-seamless-scroll.git"
